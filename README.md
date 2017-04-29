@@ -1,2 +1,2 @@
-# yogibot-website
-YogiBot Website
+# YogiBot Website
+
