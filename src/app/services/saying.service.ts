@@ -41,6 +41,7 @@ export class SayingService {
     @Inject(LANGUAGES_DATA) private languagesData: Languages
   ) {
     this.setCurrentLanguageIndex();
+    console.log('constructor', this.currentSaying);
   }
 
   getSupportLanguages(): string[] {
@@ -84,7 +85,10 @@ export class SayingService {
         Object.assign(this.currentSaying, saying);
       }
       )
-      .catch(this.handleError);
+      .catch(err => {
+        this.currentSaying.saying = 'API not reachable';
+        return Promise.reject(err.message || err);
+      });
   }
 
   private handleError(error: any): Promise<any> {

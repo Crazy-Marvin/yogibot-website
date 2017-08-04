@@ -11,8 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background-image: url("assets/img/YogiBot_background.jpg");
-  /* background-size: cover; */
-  background-size: auto 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }

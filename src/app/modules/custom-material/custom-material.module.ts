@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdToolbarModule, MdDialogModule, MdIconModule, MdButtonModule, MdInputModule, MdAutocompleteModule } from '@angular/material';
+import {
+  MdToolbarModule, MdDialogModule, MdIconModule,
+  MdButtonModule, MdInputModule, MdAutocompleteModule,
+  MdMenuModule
+} from '@angular/material';
 
 import { LegalDialog, AboutDialog } from '../../components/header/header.component';
 
@@ -16,7 +20,8 @@ import { LegalDialog, AboutDialog } from '../../components/header/header.compone
     MdIconModule,
     MdButtonModule,
     MdInputModule,
-    MdAutocompleteModule
+    MdAutocompleteModule,
+    MdMenuModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -25,7 +30,8 @@ import { LegalDialog, AboutDialog } from '../../components/header/header.compone
     MdIconModule,
     MdButtonModule,
     MdInputModule,
-    MdAutocompleteModule
+    MdAutocompleteModule,
+    MdMenuModule
   ],
   declarations: [
     LegalDialog,
