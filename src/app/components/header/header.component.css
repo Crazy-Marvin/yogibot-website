@@ -1,0 +1,19 @@
+.flex-spacer {
+  flex: 1 1 auto;
+}
+
+img {
+  width: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.transparent {
+  background: transparent;
+}
+
+.language-input {
+  padding-top: 10px;
+  padding-left: 10px;
+}
