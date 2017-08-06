@@ -1,5 +1,22 @@
 # YogiBot Website
 
+## Prerequisites & QuickStart
+1. Install [Node.js](https://nodejs.org/en/) 6.9.0 or higher, together with NPM 3 or higher.
+2. Insatll [Angular CLI](https://github.com/angular/angular-cli) 
+    ```
+    npm install -g @angular/cli
+    ```
+3. Install all the dependencies of project.
+    ```
+    cd yogibot-website
+    npm install
+    ```
+4. Build production APP
+    ```
+    ng build -prod
+    ```
+    It will generate artifacts into a `dist/` folder, upload everything in 'dist/' folder to your hosting server.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
 ## Development server
