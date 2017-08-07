@@ -8,7 +8,7 @@ import {
 } from '@angular/material';
 
 import { LegalDialog, AboutDialog } from '../../components/header/header.component';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 // This module is used to collect all material dependency.
 // https://material.angular.io/guide/getting-started#step-3-import-the-component-modules
 @NgModule({
@@ -21,7 +21,8 @@ import { LegalDialog, AboutDialog } from '../../components/header/header.compone
     MdButtonModule,
     MdInputModule,
     MdAutocompleteModule,
-    MdMenuModule
+    MdMenuModule,
+    FlexLayoutModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -31,7 +32,8 @@ import { LegalDialog, AboutDialog } from '../../components/header/header.compone
     MdButtonModule,
     MdInputModule,
     MdAutocompleteModule,
-    MdMenuModule
+    MdMenuModule,
+    FlexLayoutModule
   ],
   declarations: [
     LegalDialog,

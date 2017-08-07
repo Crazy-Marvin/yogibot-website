@@ -28,6 +28,7 @@
     "angulartics2": "^2.3.0",
     "core-js": "^2.4.1",
     "countries-data": "^1.0.1",
+    "font-awesome": "^4.7.0",
     "rxjs": "^5.4.1",
     "zone.js": "^0.8.14"
   },
