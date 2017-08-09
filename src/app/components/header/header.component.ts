@@ -55,12 +55,13 @@ export class HeaderComponent implements OnInit {
 
 @Component({
   selector: 'legal-dialog',
-  templateUrl: './legal-dialog.html',
+  templateUrl: './legal-dialog.html'
 })
 export class LegalDialog { }
 
 @Component({
   selector: 'about-dialog',
   templateUrl: './about-dialog.html',
+  styleUrls: ['./about-dialog.css']
 })
 export class AboutDialog { }
