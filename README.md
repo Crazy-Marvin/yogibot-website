@@ -17,6 +17,15 @@
     ```
     It will generate artifacts into a `dist/` folder, upload everything in 'dist/' folder to your hosting server.
 
+5. If your URL is not root(Relative path), modify `index.html`
+    ```html
+    <base href="/YOUR_PATH/">
+    ```
+    Then build with following command:
+    ```
+    ng build -prod -d /YOUR_PATH/
+    ```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
 ## Development server
