@@ -18,6 +18,15 @@
     It will generate artifacts into a `dist/` folder, upload everything in 'dist/' folder to your hosting server.
     If you do not want to host it in the root of your domain, use ```ng build -prod -d /YogiBot/``` (replace _/YogiBot/_ with your path).
 
+5. If your URL is not root(Relative path), modify `index.html`
+    ```html
+    <base href="/YOUR_PATH/">
+    ```
+    Then build with following command:
+    ```
+    ng build -prod -d /YOUR_PATH/
+    ```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
 ## Development server
