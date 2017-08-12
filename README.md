@@ -2,7 +2,7 @@
 
 ## Prerequisites & QuickStart
 1. Install [Node.js](https://nodejs.org/en/) 6.9.0 or higher, together with NPM 3 or higher.
-2. Insatll [Angular CLI](https://github.com/angular/angular-cli) 
+2. Install [Angular CLI](https://github.com/angular/angular-cli) 
     ```
     npm install -g @angular/cli
     ```
@@ -16,6 +16,7 @@
     ng build -prod
     ```
     It will generate artifacts into a `dist/` folder, upload everything in 'dist/' folder to your hosting server.
+    If you do not want to host it in the root of your domain, use ```ng build -prod -d /YogiBot/``` (replace _/YogiBot/_ with your path).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
@@ -43,3 +44,9 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Google Analytics and Piwik
+
+You can use [Google Analytics](https://analytics.google.com/) or [Piwik](https://piwik.org/). Remember to keep your production-use Tracking ID private.
+
+![YogiBot Analytics](https://user-images.githubusercontent.com/16610908/29240822-16c76078-7f6d-11e7-9c4a-3ea64dae9644.png)
