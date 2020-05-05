@@ -26,7 +26,7 @@
     "@angular/router": "^9.1.0",
     "@types/lodash": "^4.14.71",
     "angulartics2": "^8.3.0",
-    "core-js": "^3.6.4",
+    "core-js": "^3.6.5",
     "countries-data": "^1.0.1",
     "font-awesome": "^4.7.0",
     "rxjs": "^6.5.5",
