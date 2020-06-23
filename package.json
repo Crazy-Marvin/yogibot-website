@@ -23,7 +23,7 @@
     "@angular/material": "^9.2.4",
     "@angular/platform-browser": "^9.1.9",
     "@angular/platform-browser-dynamic": "^9.1.9",
-    "@angular/router": "^9.1.7",
+    "@angular/router": "^9.1.9",
     "@types/lodash": "^4.14.152",
     "angulartics2": "^8.3.0",
     "core-js": "^3.6.5",
