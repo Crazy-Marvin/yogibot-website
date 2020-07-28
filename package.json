@@ -29,7 +29,7 @@
     "core-js": "^3.6.5",
     "countries-data": "^1.0.1",
     "font-awesome": "^4.7.0",
-    "rxjs": "^6.5.5",
+    "rxjs": "^6.6.0",
     "zone.js": "^0.10.3",
     "rxjs-compat": "^6.5.5"
   },
