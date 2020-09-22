@@ -24,7 +24,7 @@
     "@angular/platform-browser": "^10.0.12",
     "@angular/platform-browser-dynamic": "^10.0.12",
     "@angular/router": "^10.0.12",
-    "@types/lodash": "^4.14.157",
+    "@types/lodash": "^4.14.161",
     "angulartics2": "^8.3.0",
     "core-js": "^3.6.5",
     "countries-data": "^1.0.1",
