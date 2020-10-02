@@ -49,11 +49,26 @@ export class SayingService {
 
   // use ipinfo to get client's country code and get language
   setCurrentLanguageIndex(): void {
+    // this.httpClient
+    //   .get<any>('https://ipinfo.io/json')
+    //   .toPromise()
+    //   .then(response => {
+    //     const countryCode = response.country;
+    //     const currentLangs = _.values(this.countriesData[countryCode].languages);
+    //     // check if this language is supported
+    //     const lang = _.findKey(this.supportLanguages, _.partial(_.isEqual, currentLangs));
+    //     if (lang) {
+    //       this.currentLanguage.name = lang;
+    //       this.previousLanguage = lang;
+    //     }
+    //     // generate first saying
+    //     this.generateNewSaying();
+    //   })
+    //   .catch(this.handleError);
     this.httpClient
       .get<any>('https://ipinfo.io/json')
-      .toPromise()
-      .then(response => {
-        const countryCode = response.country;
+      .subscribe(e => {
+        const countryCode = e.data().country
         const currentLangs = _.values(this.countriesData[countryCode].languages);
         // check if this language is supported
         const lang = _.findKey(this.supportLanguages, _.partial(_.isEqual, currentLangs));
@@ -63,8 +78,7 @@ export class SayingService {
         }
         // generate first saying
         this.generateNewSaying();
-      })
-      .catch(this.handleError);
+      });
   }
 
   // call when language selection change
