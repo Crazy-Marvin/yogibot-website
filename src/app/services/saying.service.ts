@@ -1,13 +1,12 @@
 import { Injectable, Inject } from '@angular/core';
 import { COUNTRIES_DATA, Countries, LANGUAGES_DATA, Languages } from '../modules/country/models';
-import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/toPromise';
 import * as _ from 'lodash';
 
 import { Saying } from '../models/saying';
 import { YogiBotService } from './yogi-bot.service';
+import { HttpClient } from '@angular/common/http';
 
 export interface Language {
   name: string;
@@ -35,7 +34,7 @@ export class SayingService {
   count = 0;
 
   constructor(
-    private http: Http,
+    private httpClient: HttpClient,
     private yogibot: YogiBotService,
     @Inject(COUNTRIES_DATA) private countriesData: Countries,
     @Inject(LANGUAGES_DATA) private languagesData: Languages
@@ -50,11 +49,11 @@ export class SayingService {
 
   // use ipinfo to get client's country code and get language
   setCurrentLanguageIndex(): void {
-    this.http
-      .get('https://ipinfo.io/json')
+    this.httpClient
+      .get<any>('https://ipinfo.io/json')
       .toPromise()
       .then(response => {
-        const countryCode = response.json().country;
+        const countryCode = response.country;
         const currentLangs = _.values(this.countriesData[countryCode].languages);
         // check if this language is supported
         const lang = _.findKey(this.supportLanguages, _.partial(_.isEqual, currentLangs));
