@@ -1,51 +1,53 @@
-<md-toolbar class="transparent">
+<mat-toolbar class="transparent">
   <a href="#">
     <img src="assets/img/Yogi.png" alt="" [ngStyle.lt-md]="{ 'width': '50px'}">
   </a>
   <span class="flex-spacer"></span>
-  <a md-button (click)="generate()" [ngStyle.lt-sm]="{ 'min-width': '30px','margin-left':'20px'}">
-    <md-icon>refresh</md-icon>
+  <a mat-button (click)="generate()" [ngStyle.lt-sm]="{ 'min-width': '30px','margin-left':'20px'}">
+    <mat-icon>refresh</mat-icon>
     <span fxHide.lt-md="true" style="display: inline;">Generate</span>
   </a>
-  <a href="mailto:yogi@poopjournal.rocks?Subject=YogiBot Contact&Body=" md-button fxHide.lt-md="true">
-    <md-icon>mail_outline</md-icon>
+  <a href="mailto:yogi@poopjournal.rocks?Subject=YogiBot Contact&Body=" mat-button fxHide.lt-md="true">
+    <mat-icon>mail_outline</mat-icon>
     <span>Contact</span>
   </a>
-  <a md-button (click)="openLegalDialog()" fxHide.lt-md="true">
-    <md-icon>gavel</md-icon>
+  <a mat-button (click)="openLegalDialog()" fxHide.lt-md="true">
+    <mat-icon>gavel</mat-icon>
     <span>Legal</span>
   </a>
-  <a md-button (click)="openAboutDialog()" fxHide.lt-md="true">
-    <md-icon>info_outline</md-icon>
+  <a mat-button (click)="openAboutDialog()" fxHide.lt-md="true">
+    <mat-icon>info_outline</mat-icon>
     <span>About</span>
   </a>
-  <md-icon>language</md-icon>
-  <md-input-container>
-    <input mdInput [mdAutocomplete]="auto" [(ngModel)]="selection.name" (ngModelChange)="onSelectionChange(selection.name)" class="language-input">
-  </md-input-container>
-  <md-autocomplete #auto="mdAutocomplete">
-    <md-option *ngFor="let language of filterLangs" [value]="language">
+  <mat-icon>language</mat-icon>
+
+  <mat-form-field>
+    <input matInput [matAutocomplete]="auto" [(ngModel)]="selection.name" (ngModelChange)="onSelectionChange(selection.name)" class="language-input">
+  </mat-form-field>
+
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let language of filterLangs" [value]="language">
       {{ language }}
-    </md-option>
-  </md-autocomplete>
+    </mat-option>
+  </mat-autocomplete>
 
 
 
-  <button md-icon-button [mdMenuTriggerFor]="menu" fxHide.gt-sm="true">
-    <md-icon>more_vert</md-icon>
+  <button mat-icon-button [matMenuTriggerFor]="menu" fxHide.gt-sm="true">
+    <mat-icon>more_vert</mat-icon>
   </button>
-  <md-menu #menu="mdMenu">
-    <a md-menu-item href="mailto:yogi@poopjournal.rocks?Subject=YogiBot Contact&Body=">
-      <md-icon>mail_outline</md-icon>
+  <mat-menu #menu="matMenu">
+    <a mat-menu-item href="mailto:yogi@poopjournal.rocks?Subject=YogiBot Contact&Body=">
+      <mat-icon>mail_outline</mat-icon>
       <span>Contact</span>
     </a>
-    <a md-menu-item (click)="openLegalDialog()">
-      <md-icon>gavel</md-icon>
+    <a mat-menu-item (click)="openLegalDialog()">
+      <mat-icon>gavel</mat-icon>
       <span>Legal</span>
     </a>
-    <a md-menu-item (click)="openAboutDialog()">
-      <md-icon>info_outline</md-icon>
+    <a mat-menu-item (click)="openAboutDialog()">
+      <mat-icon>info_outline</mat-icon>
       <span>About</span>
     </a>
-  </md-menu>
-</md-toolbar>
+  </mat-menu>
+</mat-toolbar>

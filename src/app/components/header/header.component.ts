@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { SayingService, Language } from '../../services/saying.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   filterLangs: string[];
   selection: Language;
 
-  constructor(public dialog: MdDialog, private sayingService: SayingService) {
+  constructor(public dialog: MatDialog, private sayingService: SayingService) {
     this.languages = sayingService.getSupportLanguages();
     this.selection = sayingService.currentLanguage;
   }
