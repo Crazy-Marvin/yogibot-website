@@ -51,9 +51,8 @@ export class SayingService {
   setCurrentLanguageIndex(): void {
     this.httpClient
       .get<any>('https://ipinfo.io/json')
-      .toPromise()
-      .then(response => {
-        const countryCode = response.country;
+      .subscribe(e => {
+        const countryCode = e.data().country
         const currentLangs = _.values(this.countriesData[countryCode].languages);
         // check if this language is supported
         const lang = _.findKey(this.supportLanguages, _.partial(_.isEqual, currentLangs));
@@ -63,8 +62,7 @@ export class SayingService {
         }
         // generate first saying
         this.generateNewSaying();
-      })
-      .catch(this.handleError);
+      });
   }
 
   // call when language selection change
