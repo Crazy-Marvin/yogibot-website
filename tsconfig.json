@@ -18,6 +18,9 @@
       "dom"
     ],
     "module": "es2020",
-    "baseUrl": "./"
-  }
+    "baseUrl": "./",
+  },
+  "include": [
+    "../node_modules/countries-data/**/*"
+  ]
 }

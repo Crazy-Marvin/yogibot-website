@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MdToolbarModule, MdDialogModule, MdIconModule,
-  MdButtonModule, MdInputModule, MdAutocompleteModule,
-  MdMenuModule
-} from '@angular/material';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { LegalDialog, AboutDialog } from '../../components/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -15,24 +17,24 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     CommonModule,
     BrowserAnimationsModule,
-    MdToolbarModule,
-    MdDialogModule,
-    MdIconModule,
-    MdButtonModule,
-    MdInputModule,
-    MdAutocompleteModule,
-    MdMenuModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatMenuModule,
     FlexLayoutModule
   ],
   exports: [
     BrowserAnimationsModule,
-    MdToolbarModule,
-    MdDialogModule,
-    MdIconModule,
-    MdButtonModule,
-    MdInputModule,
-    MdAutocompleteModule,
-    MdMenuModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatMenuModule,
     FlexLayoutModule
   ],
   declarations: [
