@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CustomMaterialModule } from './modules/custom-material/custom-material.module';
 import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { YogiBotService } from './services/yogi-bot.service';
 import { SayingService } from './services/saying.service';
@@ -26,7 +26,7 @@ import { Angulartics2Module, Angulartics2GoogleAnalytics, Angulartics2Piwik } fr
   imports: [
     BrowserModule,
     CustomMaterialModule,
-    HttpModule,
+    HttpClientModule,
     CountryModule,
     FormsModule,
     ReactiveFormsModule,
