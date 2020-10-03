@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Angulartics2GoogleAnalytics, Angulartics2Piwik } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import { Angulartics2Piwik } from 'angulartics2/piwik';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,11 @@ import { Angulartics2GoogleAnalytics, Angulartics2Piwik } from 'angulartics2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // initial Google Analytics and Piwik
-  constructor(angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics, angulartics2Piwik: Angulartics2Piwik) { }
+  constructor(
+    angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
+    angulartics2Piwik: Angulartics2Piwik
+  ) {
+    angulartics2GoogleAnalytics.startTracking();
+    angulartics2Piwik.startTracking();
+  }
 }
