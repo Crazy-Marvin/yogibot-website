@@ -15,7 +15,7 @@ import { CountryModule } from './modules/country/country.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Location } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Angulartics2Module, Angulartics2GoogleAnalytics, Angulartics2Piwik } from 'angulartics2';
+import { Angulartics2Module } from 'angulartics2';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { Angulartics2Module, Angulartics2GoogleAnalytics, Angulartics2Piwik } fr
     CountryModule,
     FormsModule,
     ReactiveFormsModule,
-    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics, Angulartics2Piwik]),
+    Angulartics2Module.forRoot(),
     RouterModule.forRoot([])
   ],
   providers: [

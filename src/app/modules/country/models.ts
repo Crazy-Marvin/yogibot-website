@@ -1,4 +1,4 @@
-import { OpaqueToken } from '@angular/core';
+import { InjectionToken } from '@angular/core';
 
 export {
   Countries,
@@ -12,6 +12,6 @@ export {
   LanguagesData
 } from 'countries-data';
 
-export const COUNTRIES_DATA = new OpaqueToken('CountriesData');
-export const LANGUAGES_DATA = new OpaqueToken('LanguagesData');
-export const ANTHEMS_DATA = new OpaqueToken('AnthemsData');
+export const COUNTRIES_DATA = new InjectionToken('CountriesData');
+export const LANGUAGES_DATA = new InjectionToken('LanguagesData');
+export const ANTHEMS_DATA = new InjectionToken('AnthemsData');
