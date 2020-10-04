@@ -14,9 +14,4 @@ export class YogiBotService {
     return this.httpClient
       .get('https://poopjournal.rocks/YogiBot/API/v2/api.php?command=get_random_one&lng=' + language);
   }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error);
-    return Promise.reject(error.message || error);
-  }
 }
