@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import 'rxjs/add/operator/toPromise';
-import { Saying } from '../models/saying';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 // Service to get Saying from YogiBot
 @Injectable()
@@ -10,12 +10,9 @@ export class YogiBotService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getSaying(language: string): Promise<Saying> {
+  getSaying(language: string): Observable<any> {
     return this.httpClient
-      .get('https://poopjournal.rocks/YogiBot/API/v2/api.php?command=get_random_one&lng=' + language)
-      .toPromise()
-      .then(response => response[0] as Saying)
-      .catch(this.handleError);
+      .get('https://poopjournal.rocks/YogiBot/API/v2/api.php?command=get_random_one&lng=' + language);
   }
 
   private handleError(error: any): Promise<any> {

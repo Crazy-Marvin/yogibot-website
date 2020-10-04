@@ -52,7 +52,7 @@ export class SayingService {
     this.httpClient
       .get<any>('https://ipinfo.io/json')
       .subscribe(e => {
-        const countryCode = e.data().country
+        const countryCode = e.data().country;
         const currentLangs = _.values(this.countriesData[countryCode].languages);
         // check if this language is supported
         const lang = _.findKey(this.supportLanguages, _.partial(_.isEqual, currentLangs));
@@ -77,12 +77,11 @@ export class SayingService {
   // call when click generate button
   generateNewSaying() {
     this.yogibot.getSaying(this.supportLanguages[this.currentLanguage.name])
-      .then(saying => {
-        // update current saying
-        Object.assign(this.currentSaying, saying);
-      }
-      )
-      .catch(err => {
+      .subscribe((saying: Saying[]) => {
+        Object.assign(this.currentSaying, saying[0]);
+        console.log(this.currentSaying, saying);
+      },
+      (err: any) => {
         this.currentSaying.saying = 'API not reachable';
         return Promise.reject(err.message || err);
       });
