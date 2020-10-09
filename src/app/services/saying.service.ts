@@ -7,6 +7,7 @@ import * as _ from 'lodash';
 import { Saying } from '../models/saying';
 import { YogiBotService } from './yogi-bot.service';
 import { HttpClient } from '@angular/common/http';
+import { IpInfo } from '../models/ipInfo';
 
 export interface Language {
   name: string;
@@ -50,9 +51,10 @@ export class SayingService {
   // use ipinfo to get client's country code and get language
   setCurrentLanguageIndex(): void {
     this.httpClient
-      .get<any>('https://ipinfo.io/json')
-      .subscribe(e => {
-        const countryCode = e.data().country
+      .get<IpInfo>('https://ipinfo.io/json')
+      .subscribe(ipInfo => {
+        console.log(ipInfo);
+        const countryCode = ipInfo.country;
         const currentLangs = _.values(this.countriesData[countryCode].languages);
         // check if this language is supported
         const lang = _.findKey(this.supportLanguages, _.partial(_.isEqual, currentLangs));
@@ -77,19 +79,13 @@ export class SayingService {
   // call when click generate button
   generateNewSaying() {
     this.yogibot.getSaying(this.supportLanguages[this.currentLanguage.name])
-      .then(saying => {
-        // update current saying
-        Object.assign(this.currentSaying, saying);
-      }
-      )
-      .catch(err => {
+      .subscribe((saying: Saying[]) => {
+        Object.assign(this.currentSaying, saying[0]);
+        console.log(this.currentSaying, saying);
+      },
+      (err: any) => {
         this.currentSaying.saying = 'API not reachable';
         return Promise.reject(err.message || err);
       });
-  }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error);
-    return Promise.reject(error.message || error);
   }
 }
