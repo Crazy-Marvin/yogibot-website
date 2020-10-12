@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CustomMaterialModule } from './modules/custom-material/custom-material.module';
 import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { YogiBotService } from './services/yogi-bot.service';
 import { SayingService } from './services/saying.service';
@@ -15,7 +15,7 @@ import { CountryModule } from './modules/country/country.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Location } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Angulartics2Module, Angulartics2GoogleAnalytics, Angulartics2Piwik } from 'angulartics2';
+import { Angulartics2Module } from 'angulartics2';
 
 @NgModule({
   declarations: [
@@ -26,11 +26,11 @@ import { Angulartics2Module, Angulartics2GoogleAnalytics, Angulartics2Piwik } fr
   imports: [
     BrowserModule,
     CustomMaterialModule,
-    HttpModule,
+    HttpClientModule,
     CountryModule,
     FormsModule,
     ReactiveFormsModule,
-    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics, Angulartics2Piwik]),
+    Angulartics2Module.forRoot(),
     RouterModule.forRoot([])
   ],
   providers: [
