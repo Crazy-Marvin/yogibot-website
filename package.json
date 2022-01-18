@@ -28,7 +28,7 @@
         "core-js": "^3.19.3",
         "countries-data": "^1.0.1",
         "font-awesome": "^4.7.0",
-        "rxjs": "^6.5.5",
+        "rxjs": "^7.5.1",
         "rxjs-compat": "^6.5.5",
         "tslib": "^2.3.1",
         "zone.js": "~0.11.4"
